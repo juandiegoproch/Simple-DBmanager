@@ -1,10 +1,13 @@
 #include <fstream>
 #include <string>
-#include <vector>
+#include <array>
 
 // A register represents a single entry in a table.
 class Register
 {
+    Field** fields;
+
+    
 };
 
 // The Field class and all its associated subclasses permit runtime polymorphism for register types
