@@ -379,24 +379,29 @@ Table* make_sure_destructors_run()
 
 int main(void)
 {
-/*     TableRowTemplate templ; // creamos el template: el template guarda los nombres y los tipos de los campos
+/*
+    // *******************
+    //  * Example usage  *
+    //  ******************
+
+     TableRowTemplate templ; // creamos el template: el template guarda los nombres y los tipos de los campos
     // llenamos el template de los campos. _Creo_ que hay una forma mas bonita de hacer esto!!
             // notas al implementador: La idea es que tanto la construccion de registros como de templates sea con
             // este metodo de poner miles de metodos que van construyendo al coso poco a poco.
     templ.field(varchar_ft,"name").field(integer_ft,"age").field(floating_ft,"balance");
     
 
-    TableRow reg1(templ);
+    TableRow reg1(templ); // aca se instancia el registro con un template!!
 
     int temp1 = 42;
     double temp2 = 3.141592;
-    reg1.GetField(0)->SetValue((void*)"Juan");
+    reg1.GetField(0)->SetValue((void*)"Juan"); // to set the value of a field you pass a pointer to the appropiate type of object
     reg1.GetField(1)->SetValue((void*)&temp1);
     reg1.GetField(2)->SetValue((void*)&temp2);
 
     std::cout << reg1.repr_ASCII() << std::endl;
 
-    Table* t = new MaterializedTable(templ); // esta es la tabla. la tabla necesita 
+    Table* t = new MaterializedTable(templ); // esta es la tabla. la tabla necesita su template 
     t->insert(reg1);
     */
     Table* t = make_sure_destructors_run();
